@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>SOS MI SAN VALENTÍNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN 💖</title>
+
+<style>
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:#ff6fae;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  position: relative;
+  overflow-x:hidden;
+  overflow-y:auto;
+  animation:fadeIn 2s ease;
+  padding: 80px 0 30px 0;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* Partículas */
+.particles{
+  position:fixed;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.heart{
+  position:absolute;
+  color:#ffb6d5;
+  font-size:18px;
+  animation:float 8s linear infinite;
+  opacity:0.7;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh) scale(0.5); opacity:0;}
+  to{transform:translateY(-10vh) scale(1.2); opacity:1;}
+}
+
+/* Hoja */
+.paper{
+  position:relative;
+  background:#ffe6f0;
+  width:85%;
+  max-width:750px;
+  padding:70px 50px 50px;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  text-align:center;
+  font-family:"Times New Roman", serif;
+  z-index:2;
+  max-height:85vh;
+  overflow-y:auto;
+  overflow-x:visible;   /* 🔥 FIX */
+  margin-top:30px;
+}
+
+/* Líneas hoja */
+.paper::before,.paper::after{
+  content:"";
+  position:absolute;
+  top:0;
+  height:100%;
+  width:6px;
+  background:repeating-linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.05) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+.paper::before{left:12px;}
+.paper::after{right:12px;}
+
+/* Título */
+.title{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translate(-50%, -50%);
+  background:white;
+  padding:12px 35px;
+  border-radius:25px;
+  font-size:28px;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  z-index:10;
+}
+
+/* Texto */
+.content{
+  font-size:18px;
+  line-height:1.7;
+  min-height:160px;
+  word-wrap:break-word;
+}
+
+/* Galería */
+.gallery{
+  margin-top:40px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+  justify-content:center;
+}
+
+/* Marco IG */
+.photo-frame{
+  width:180px;
+  background:white;
+  border-radius:14px;
+  padding:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  transition:0.3s ease;
+}
+.photo-frame:hover{
+  transform:translateY(-8px) scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.photo-frame img{
+  width:100%;
+  border-radius:8px;
+  display:block;
+}
+
+.photo-desc{
+  margin-top:8px;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  color:black;
+  text-align:left;
+}
+
+/* Responsive */
+@media (max-width:600px){
+  .paper{
+    width:95%;
+    padding:60px 20px 30px;
+    max-height:90vh;
+  }
+  .title{
+    font-size:22px;
+    padding:10px 20px;
+  }
+  .content{
+    font-size:16px;
+  }
+  .photo-frame{
+    width:140px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="particles" id="particles"></div>
+
+<div class="paper">
+
+  <div class="content" id="typewriter"></div>
+
+  <div class="gallery">
+    <div class="photo-frame">
+      <img src="foto1.jpg">
+      <div class="photo-desc">El mejor día de mi vida.</div>
+    </div>
+
+    <div class="photo-frame">
+      <img src="foto2.jpg">
+      <div class="photo-desc">La mejor juntada como amigos</div>
+    </div>
+
+    <div class="photo-frame">
+      <img src="foto3.jpg">
+      <div class="photo-desc">El mejor día de playa</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const text = `
+Gracias por ser mi San valentin amor. En serio no puedo explicar lo agradecido que estoy con vos por haber llegado a mi vida y haberte quedado, me encanta todo lo que pasamos juntos y espero que sigamos por muchisimo tiempo mas, te amo demasiado mi amorcito, en serio te amo con cada fibra, con cada tejido de mi corazon, cada segundo que pasa pienso en vos y en que hermoso que es que seas mi novia, en serio todavia no pude asimilar que vos seas mi novia y ya pasaron DOS MESES, es imposible creer que pudo haber pasado tanto tiempo desde que estamos como novios, en serio fueron los mejores meses de mi vida, no he vivido mucho pero en serio nunca la habia pasado tan bien con alguien como con vos. Sos la persona mas especial de mi vida, la mas importante y la que mas amo con todo mi corazon, espero que entiendas que si alguna vez fui un poco celoso o algo, fue meramente por el hecho de que en serio yo te amo demasiado, y me doleria pensar que te amo muchisimo mas que vos a mi, igual eso cuando me siento mal, la mayoria del tiempo me doy cuenta que vos tambien me amas un montonazo y estoy muy agradecido de eso, te amo un montonazoooooo y espero que pasemos un MUY HERMOSO SAN VALENTIN. TE AMOOOOOOOO :D
+`;
+
+let i=0;
+const speed=35;
+const target=document.getElementById("typewriter");
+
+function typeEffect(){
+  if(i<text.length){
+    target.innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeEffect,speed);
+  }
+}
+typeEffect();
+
+/* Partículas */
+const particles=document.getElementById("particles");
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="💕";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*20+10)+"px";
+  heart.style.animationDuration=(Math.random()*5+5)+"s";
+  particles.appendChild(heart);
+  setTimeout(()=>heart.remove(),10000);
+}
+setInterval(createHeart,400);
+</script>
+
+</body>
+</html>

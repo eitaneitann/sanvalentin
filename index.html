@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>QUERES SER MI SAN VALENTIN</title>
+
+<style>
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:#ff6fae;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  overflow-x:hidden;
+  overflow-y:auto;
+  animation:fadeIn 2s ease;
+  padding:30px 0;
+}
+
+/* Fade in */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* Partículas */
+.particles{
+  position:fixed;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+
+.heart{
+  position:absolute;
+  color:#ffb6d5;
+  font-size:18px;
+  animation:float 8s linear infinite;
+  opacity:0.7;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh) scale(0.5); opacity:0;}
+  to{transform:translateY(-10vh) scale(1.2); opacity:1;}
+}
+
+/* Hoja */
+.paper{
+  position:relative;
+  background:#ffe6f0;
+  width:85%;
+  max-width:750px;
+  padding:70px 50px 50px;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  text-align:center;
+  font-family:"Times New Roman", serif;
+  z-index:2;
+  max-height:85vh;
+  overflow-y:auto;
+}
+
+/* Líneas tipo hoja */
+.paper::before,.paper::after{
+  content:"";
+  position:absolute;
+  top:0;
+  height:100%;
+  width:6px;
+  background:repeating-linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.05) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+.paper::before{left:12px;}
+.paper::after{right:12px;}
+
+/* Título */
+.title{
+  position:absolute;
+  top:-35px;
+  left:50%;
+  transform:translateX(-50%);
+  background:white;
+  padding:12px 35px;
+  border-radius:25px;
+  font-size:28px;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Texto */
+.content{
+  font-size:19px;
+  line-height:1.7;
+  min-height:140px;
+  word-wrap:break-word;
+}
+
+/* Pregunta */
+.question{
+  margin-top:35px;
+  font-size:26px;
+  font-weight:bold;
+}
+
+/* Botones */
+.buttons{
+  margin-top:35px;
+  position:relative;
+  height:130px;
+}
+
+button{
+  padding:12px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  position:absolute;
+  transition:0.2s ease;
+}
+
+#yesBtn{
+  background:#ff3d8b;
+  color:white;
+  left:28%;
+}
+
+#noBtn{
+  background:#999;
+  color:white;
+  left:55%;
+}
+
+/* Responsive */
+@media (max-width:600px){
+  .paper{
+    width:95%;
+    padding:60px 20px 30px;
+    max-height:90vh;
+  }
+  .title{
+    font-size:22px;
+    padding:10px 20px;
+  }
+  .content{
+    font-size:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="particles" id="particles"></div>
+
+<div class="paper">
+
+  
+
+  <div class="question">
+    ¿QUERES SER MI SAN VALENTINNNNNNNNNNN? 💘
+  </div>
+
+  <div class="buttons" id="buttonArea">
+    <button id="yesBtn" onclick="window.location.href='si.html'">Sí</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <div class="content" id="typewriter"></div>
+
+<img src="foto4.jpg"></img>
+
+</div>
+
+<script>
+const text = `
+HOLA AMORR TE VENIA A PEDIR QUE SEAS MI SAN VALENTIN PORFI PLEASE PLEASE PLEASE PORFA
+`;
+
+let i=0;
+const speed=40;
+const target=document.getElementById("typewriter");
+
+function typeEffect(){
+  if(i<text.length){
+    target.innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeEffect,speed);
+  }
+}
+typeEffect();
+
+/* Botón que huye */
+const noBtn=document.getElementById("noBtn");
+const area=document.getElementById("buttonArea");
+
+noBtn.addEventListener("mouseover",()=>{
+  const btnRect=noBtn.getBoundingClientRect();
+  const maxX=area.clientWidth-btnRect.width;
+  const maxY=area.clientHeight-btnRect.height;
+  noBtn.style.left=Math.random()*maxX+"px";
+  noBtn.style.top=Math.random()*maxY+"px";
+});
+
+/* Partículas */
+const particles=document.getElementById("particles");
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="💕";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*20+10)+"px";
+  heart.style.animationDuration=(Math.random()*5+5)+"s";
+  particles.appendChild(heart);
+  setTimeout(()=>heart.remove(),10000);
+}
+setInterval(createHeart,400);
+</script>
+
+</body>
+</html>
